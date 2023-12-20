@@ -1,0 +1,7 @@
+// config.h
+#define WIFI_SSID "wifissid"
+#define WIFI_PASSWORD "wifipassword"
+#define MQTT_SERVER "mqtthostname
+#define MQTT_USER "mqqtuser"
+#define MQTT_PASSWORD "mqttpassword"
+#define MQTT_CLIENT_NAME "mqtt client name, also used as topic"
