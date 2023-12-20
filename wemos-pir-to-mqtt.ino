@@ -26,7 +26,7 @@ int millisNow = 0;
 
 int prevState = 2;
 
-#define PIR_PIN D6
+#define PIR_PIN D2
 #define WIFI_PIN D5
 #define MQTT_PIN D7
 #define ERROR_PIN D8
@@ -51,14 +51,12 @@ void setup() {
   digitalWrite(MQTT_PIN, LOW);
   digitalWrite(ERROR_PIN, HIGH);
   
+  delay(250);
   setup_wifi();
   delay(1000);
 }
 
 void loop() {
-//  Serial.print("millisNow ");
-//  Serial.println(millisNow);
-
   if (digitalRead(WIFI_PIN) == LOW && digitalRead(MQTT_PIN) == LOW) {
     digitalWrite(ERROR_PIN, HIGH);
   } else {
@@ -72,10 +70,10 @@ void loop() {
   client.loop();
 
   int state = digitalRead(PIR_PIN);
-//  Serial.print("state ");
-//  Serial.println(state);
-//  Serial.print("prevState ");
-//  Serial.println(prevState);
+  Serial.print("state ");
+  Serial.println(state);
+  Serial.print("prevState ");
+  Serial.println(prevState);
 
   String full_topic = String(mqtt_client_name) + "/PIR";
   String state_value = String(state);
