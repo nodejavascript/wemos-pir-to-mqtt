@@ -1,5 +1,11 @@
 # wemos-pir-to-mqtt
 
+A door that opens when nobody is there is worth knowing about. This is a LoLin(WEMOS) D1 mini watching a passive infrared sensor and reporting state changes over MQTT, with two LEDs showing whether Wi-Fi and the broker are actually up — so a silent sensor looks visibly different from a dead network.
+
+**Files:** `wemos-pir-to-mqtt.ino` is the sketch · `config.h.example` holds the Wi-Fi and MQTT settings you copy to `config.h` · `picture.jpg` is the installation this was written for.
+
+---
+
 This Arduino-based project utilizes the LOLIN(WEMOS) D1 mini (clone) board to monitor Wi-Fi and MQTT connections through LED indicators. Additionally, a passive infrared (PIR) sensor detects state changes and detects if the door is opened.
 
 ![LOLIN(WEMOS) D1 mini Board](./picture.jpg)
